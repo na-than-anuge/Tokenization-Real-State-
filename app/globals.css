@@ -1,26 +1,287 @@
-@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+body {
+ margin: 0;
+ padding: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/*Landing Page section*/  
+.HOMEPAGE {
+  position: relative; 
+  min-height: 100vh; 
+  overflow: hidden; 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.HOMEPAGE::before {
+  content: "";
+  background-image: url(../public/Images/real-estate-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; 
+}
+
+.container {
+  margin-top: 7rem;
+  margin-left: 7rem;
+  height: 20rem;
+  width: 20rem;
+  max-width: 1200px;
+ 
+  background: rgba(255, 255, 255, 0.45); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  border-radius: 12px; 
+  border: 1px solid rgba(255, 255, 255, 0.45); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+  padding: 2rem;
+}
+
+.card-title {
+  font-family: 'Inter'; 
+  font-size: 2.5rem;
+  font-weight: 800; 
+  color: #1a237e; 
+  margin-bottom: rem;
+}
+
+.card-description {
+  margin-top: 1.3rem;
+  font-family: 'Inter';
+  font-size: 1.3rem; 
+  font-weight: 550; 
+  margin-bottom: 1.5rem;
+  color: #000000;
+}
+
+.card-content {
+  margin-top: 3rem;
+  font-family: 'Inter';
+  font-size: 1rem; 
+  font-weight: 540; 
+  color: #000000;
+}
+/* Button Container */
+.button-container {
+  display: flex;
+  gap: 1rem; /* Space between buttons */
+  margin-top: 3rem;
+  justify-content: center; /* Center the button group */
+}
+
+/* Base Button Styles */
+.Button {
+  background-color: #316dee;
+  color: white;
+  border: none;
+  padding: 0.75rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 8rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.Btn {
+  background-color: #316dee00;
+  color: rgb(0, 0, 0);
+  border: 2px solid black;
+  padding: 0.75rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 10rem;
+  text-align: center;
+}
+
+/* Hover Effects */
+.Button:hover {
+  background-color: #0940d7;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.Btn:hover {
+  background-color: #0940d7;
+  color: white;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/*How it works Section*/
+.Howitworks {
+  background-color: #043d68;
+  position: relative;
+  padding: 2rem 0;
+  width: 100%;
+  min-height: 70vh;
+  overflow: hidden; /* Contain absolute positioned elements */
+}
+
+.con-howitworks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.con-howitworks .Title h1 {
+  color: white;
+  margin: 0 0 3rem 0; 
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.Steps {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  margin-top: 4rem;
+}
+
+/* .altcoins {
+  position: absolute;
+  right: 1%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px; 
+  height: 400px;
+  z-index: 1; 
+} */
+
+/* .altcoins img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+} */
+
+.Guides {
+  position: relative;
+  z-index: 999; 
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  min-width: 250px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.33);
+  transition: all 0.3s ease;
+}
+
+.Guides:hover {
+  border: 1px solid rgba(255, 255, 255, 0.87);
+}
+
+.Guides h3 {
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  margin: 0;
+
+}
+
+.Guides p {
+  margin-top: 2rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+
+/* Alert Dialog Styles */
+.alert-dialog-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 999;
+}
+
+.alert-dialog-content {
+  background: rgba(255, 255, 255, 0.45); 
+  border-radius: 6px;
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 400px;
+  max-height: 70vh;
+  padding: 25px;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+}
+
+.alert-dialog-header {
+  margin-bottom: 1rem;
+}
+
+.alert-dialog-title {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.alert-dialog-description {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.4;
+}
+
+.alert-dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.alert-dialog-cancel {
+  font-size: 1rem;
+  font-weight: 530;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #b3b3b3;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.alert-dialog-cancel:hover {
+  border: 1px solid #ffffff;
+  background-color: #aaaaaa;
+}
+
+
+@keyframes overlayShow {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* EXPLORE-PROPERTIES  SECTION*/
+
+.EXPLORE-PROPERTIES {
+  background-color: #012745;
+  width: 100%;
+  height: 100vh;
 }
